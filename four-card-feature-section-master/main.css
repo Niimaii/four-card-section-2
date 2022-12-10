@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  padding: 2rem;
+}
+
+/* ///// Header Section ///// */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h2 {
+  color: hsl(229, 6%, 66%);
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+main h1 {
+  color: hsl(234, 12%, 34%);
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.headerText p {
+  color: hsl(229, 6%, 66%);
+}
+
+.headerText {
+  width: 35rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* ///// Card Section ///// */
+.cardContainer {
+  display: grid;
+  grid-template-columns: 25rem 25rem 25rem;
+  grid-template-rows: 8rem 8rem 8rem 8rem;
+  grid-template-areas:
+    "blank1 builder blank2"
+    "supervisor builder calculator"
+    "supervisor karma calculator"
+    "blank3 karma blank4";
+  grid-gap: 30px;
+}
+
+.card {
+  position: relative;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.card p {
+  font-weight: 300;
+  font-size: 1rem;
+  color: hsl(229, 6%, 66%);
+  margin-top: 1rem;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card img {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.builder {
+  grid-area: builder;
+  border-top: 4px solid hsl(0, 78%, 62%);
+}
+
+.supervisor {
+  grid-area: supervisor;
+  border-top: 4px solid hsl(180, 62%, 55%);
+}
+
+.calculator {
+  grid-area: calculator;
+  border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+.karma {
+  grid-area: karma;
+  border-top: 4px solid hsl(34, 97%, 64%);
+}
+
+/* ///// Mobile ///// */
+
+@media only screen and (max-width: 550px) {
+  .cardContainer {
+    grid-template-columns: 25rem;
+    grid-template-rows: 16rem 16rem 16rem 16rem;
+    grid-template-areas:
+      "supervisor"
+      "builder"
+      "karma"
+      "calculator";
+  }
+
+  main h1 {
+    font-size: 1.6rem;
+  }
+
+  main h2 {
+    font-size: 1.6rem;
+  }
+
+  .headerText {
+    width: 20rem;
+  }
+}
